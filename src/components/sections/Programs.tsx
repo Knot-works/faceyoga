@@ -3,25 +3,24 @@ import { Section, SectionHeader } from '../layout';
 const pdfs = [
   {
     title: 'ポスター①',
-    pdf: '/pdf1.pdf',
-    image: '/pdf1.jpg',
+    pdf: import.meta.env.BASE_URL + 'pdf1.pdf',
+    image: import.meta.env.BASE_URL + 'pdf1.jpg',
   },
   {
     title: 'ポスター②',
-    pdf: '/pdf2.pdf',
-    image: '/pdf2.jpg',
+    pdf: import.meta.env.BASE_URL + 'pdf2.pdf',
+    image: import.meta.env.BASE_URL + 'pdf2.jpg',
   },
   {
     title: 'ポスター③',
-    pdf: '/pdf3.pdf',
-    image: '/pdf3.jpg',
+    pdf: import.meta.env.BASE_URL + 'pdf3.pdf',
+    image: import.meta.env.BASE_URL + 'pdf3.jpg',
   },
   {
     title: 'ポスター④',
-    pdf: '/pdf4.pdf',
-    image: '/pdf4.jpg',
+    pdf: import.meta.env.BASE_URL + 'pdf4.pdf',
+    image: import.meta.env.BASE_URL + 'pdf4.jpg',
   },
-  
 ];
 
 export function Programs() {
@@ -33,7 +32,6 @@ export function Programs() {
       />
 
       <div className="space-y-8">
-        {/* 1個目（中央） */}
         <div className="max-w-2xl mx-auto">
           <a href={pdfs[0].pdf} target="_blank" rel="noopener noreferrer">
             <img
@@ -44,15 +42,9 @@ export function Programs() {
           </a>
         </div>
 
-        {/* 2〜3 */}
         <div className="grid md:grid-cols-2 gap-8">
           {pdfs.slice(1, 3).map((item, index) => (
-            <a
-              key={index}
-              href={item.pdf}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a key={index} href={item.pdf} target="_blank" rel="noopener noreferrer">
               <img
                 src={item.image}
                 alt={item.title}
@@ -62,15 +54,9 @@ export function Programs() {
           ))}
         </div>
 
-        {/* 4〜5 */}
         <div className="grid md:grid-cols-2 gap-8">
           {pdfs.slice(3, 5).map((item, index) => (
-            <a
-              key={index}
-              href={item.pdf}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a key={index} href={item.pdf} target="_blank" rel="noopener noreferrer">
               <img
                 src={item.image}
                 alt={item.title}

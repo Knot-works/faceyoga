@@ -44,25 +44,28 @@ export function Contact() {
               <div className="space-y-4">
                 {/* LINE */}
                 <a
-                  href="#"
-                  className="flex items-center gap-4 p-5 bg-[#06C755]/10 rounded-xl hover:bg-[#06C755]/20 transition-colors duration-300 group"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-[#06C755] flex items-center justify-center">
-                    <MessageCircle className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-primary group-hover:text-[#06C755] transition-colors duration-300">
-                      LINE公式
-                    </p>
-                    <p className="text-sm text-text-muted">
-                      お気軽にメッセージください
-                    </p>
-                  </div>
-                </a>
+  href="https://lin.ee/suH9AhB"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-4 p-5 bg-[#06C755]/10 rounded-xl hover:bg-[#06C755]/20 transition-colors duration-300 group"
+>
+  <div className="w-12 h-12 rounded-xl bg-[#06C755] flex items-center justify-center">
+    <MessageCircle className="w-6 h-6 text-white" />
+  </div>
+  <div>
+    <p className="font-medium text-primary group-hover:text-[#06C755] transition-colors duration-300">
+      LINE公式
+    </p>
+    <p className="text-sm text-text-muted">
+      お気軽にメッセージください
+    </p>
+  </div>
+</a>
+                
 
                 {/* Email */}
                 <a
-                  href="mailto:contact@example.com"
+                  href="sachi.realignment@gmail.com"
                   className="flex items-center gap-4 p-5 bg-accent/10 rounded-xl hover:bg-accent/20 transition-colors duration-300 group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center">
@@ -73,7 +76,7 @@ export function Contact() {
                       メール
                     </p>
                     <p className="text-sm text-text-muted">
-                      contact@example.com
+                      sachi.realignment@gmail.com
                     </p>
                   </div>
                 </a>
@@ -154,11 +157,10 @@ export function Contact() {
                   className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-300 appearance-none cursor-pointer"
                 >
                   <option value="">選択してください</option>
-                  <option value="workshop">1日ワークショップ</option>
-                  <option value="5days">5日間プログラム</option>
-                  <option value="14days">14日間プログラム</option>
-                  <option value="3months">3か月プログラム</option>
-                  <option value="6months">6か月プログラム</option>
+                  <option value="workshop">スプーン</option>
+                  <option value="5days">お箸</option>
+                  <option value="14days">白鳥</option>
+                  <option value="3months">オキシトシン</option>
                   <option value="other">その他・相談したい</option>
                 </select>
               </div>

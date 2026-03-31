@@ -22,7 +22,6 @@ const pdfs = [
     image: import.meta.env.BASE_URL + 'pdf4.jpg',
   },
 ];
-
 export function Programs() {
   return (
     <Section id="programs" background="warm">

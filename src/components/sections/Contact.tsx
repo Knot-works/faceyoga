@@ -1,5 +1,4 @@
 import { Section, SectionHeader } from '../layout';
-import { Button } from '../ui';
 import { Mail, MessageCircle, Send } from 'lucide-react';
 
 export function Contact() {

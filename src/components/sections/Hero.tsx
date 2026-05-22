@@ -1,6 +1,8 @@
 import { Button } from '../ui';
 
-export function Hero() {
+const defaultPhotoSrc = `${import.meta.env.BASE_URL}profile.png`;
+
+export function Hero({ photoSrc = defaultPhotoSrc }: { photoSrc?: string }) {
   return (
     <section
       id="home"
@@ -84,19 +86,8 @@ export function Hero() {
               <div className="absolute inset-4 bg-gradient-to-br from-accent/30 to-accent-warm/30 rounded-[60px_20px_60px_20px] transform rotate-3" />
 
               {/* Placeholder for image */}
-              <div className="absolute inset-0 bg-surface rounded-[50px_30px_50px_30px] shadow-large flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-accent/40 to-accent-warm/40 flex items-center justify-center">
-                    <span className="text-4xl text-primary font-heading">
-                      顔
-                    </span>
-                  </div>
-                  <p className="text-text-muted text-sm">
-                    Face Yoga Method
-                    <br />
-                    国際認定講師
-                  </p>
-                </div>
+              <div className="absolute inset-0 bg-surface rounded-[50px_30px_50px_30px] shadow-large overflow-hidden">
+                <img src={photoSrc} alt="プロフィール" className="w-full h-full object-contain" />
               </div>
 
               {/* Decorative dots */}

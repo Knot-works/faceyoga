@@ -10,8 +10,32 @@ export function Contact() {
       />
 
       <div className="max-w-5xl mx-auto">
-        <div className="grid lg:grid-cols-[40fr_60fr] gap-12 lg:gap-16">
-          {/* Contact options */}
+        {/* 比率もフォーム側を広くするため、グリッドの比率を [60fr_40fr] に反転させています */}
+        <div className="grid lg:grid-cols-[60fr_40fr] gap-12 lg:gap-16">
+          
+          {/* 1. 【前に移動】Contact form (Google Form リンクへの差し替え) */}
+          <div className="bg-surface-warm rounded-2xl p-8 md:p-10 flex flex-col justify-center items-center text-center">
+            <h3 className="font-heading text-xl text-primary mb-4">
+              お申し込み、お問い合わせフォーム
+            </h3>
+            <p className="text-sm text-text-muted mb-8 leading-relaxed">
+              フォームでのお問い合わせ・お申し込みは、<br />
+              Googleフォームにて受け付けております。<br />
+              下記のボタンよりご入力をお願いいたします。
+            </p>
+
+            <a
+              href="https://forms.gle/7Z5cmafKFC4xiRB38"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full max-w-sm inline-flex items-center justify-center bg-accent text-white font-medium h-12 px-6 rounded-lg hover:bg-accent/90 transition-colors duration-300 shadow-sm"
+            >
+              <Send className="w-5 h-5 mr-2" />
+              フォームを開いて入力する
+            </a>
+          </div>
+
+          {/* 2. 【後ろに移動】Contact options */}
           <div className="space-y-8">
             <div>
               <h3 className="font-heading text-xl text-primary mb-6">
@@ -69,30 +93,6 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Contact form (Google Form リンクへの差し替え) */}
-          <div className="bg-surface-warm rounded-2xl p-8 md:p-10 flex flex-col justify-center items-center text-center">
-            <h3 className="font-heading text-xl text-primary mb-4">
-              お問い合わせフォーム
-            </h3>
-            <p className="text-sm text-text-muted mb-8 leading-relaxed">
-              フォームでのお問い合わせ・お申し込みは、<br />
-              Googleフォームにて受け付けております。<br />
-              下記のボタンよりご入力をお願いいたします。
-            </p>
-
-            {/* UIのButtonがaタグ（リンク）として振る舞える想定の記述です。
-                もしエラーになる場合は <a href="..." target="_blank" className="..."> のように通常のaタグに書き換えてください */}
-            {/* 修正前：<Button as="a" ...> 〜 </Button> の部分を以下に置き換えます */}
-<a
-  href="https://forms.gle/7Z5cmafKFC4xiRB38"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="w-full max-w-sm inline-flex items-center justify-center bg-accent text-white font-medium h-12 px-6 rounded-lg hover:bg-accent/90 transition-colors duration-300 shadow-sm"
->
-  <Send className="w-5 h-5 mr-2" />
-  フォームを開いて入力する
-</a>
-          </div>
         </div>
       </div>
     </Section>

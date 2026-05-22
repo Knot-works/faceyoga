@@ -3,7 +3,7 @@ import { Section, SectionHeader } from '../layout';
 export function About() {
   return (
     <Section id="about" background="warm">
-      <SectionHeader title="私について" subtitle="置田 幸恵 / Yukie Okita" />
+      <SectionHeader title="私について" subtitle="okita sachi" />
 
       <div className="grid lg:grid-cols-[40fr_60fr] gap-12 lg:gap-20 items-start">
         {/* Profile Card */}

@@ -4,7 +4,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-10">
@@ -24,7 +24,8 @@ export function Hero() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-32">
+      {/* Main Content Area */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-16 w-full">
         <div className="grid lg:grid-cols-[55fr_45fr] gap-16 items-center">
           {/* Content */}
           <div className="opacity-0 animate-fade-in-up">
@@ -105,12 +106,42 @@ export function Hero() {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-text-light opacity-0 animate-fade-in stagger-4">
-          <span className="text-xs tracking-widest uppercase">Scroll</span>
-          <div className="w-px h-8 bg-gradient-to-b from-text-light to-transparent" />
+      {/* 🔴 追加：【特別出店】イベント情報ブロック */}
+      <div className="max-w-4xl mx-auto px-6 w-full mb-20 opacity-0 animate-fade-in stagger-3">
+        <div className="bg-surface-warm/80 backdrop-blur-sm border border-accent/20 rounded-2xl p-6 md:p-8 shadow-sm">
+          <div className="inline-block bg-accent text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
+            初出店のお知らせ
+          </div>
+          <h2 className="text-xl md:text-2xl font-heading text-primary mb-4">
+            木更津市開催【健康イベント ハピくるマルシェ】に初出店いたします！
+          </h2>
+          <div className="text-sm text-text-muted leading-relaxed mb-6 space-y-3">
+            <p>
+              実は、お顔の筋肉も体とまったく同じ。使わないとたるみ、使いすぎると凝り固まります。<br />
+              今回のイベントでは、そんなお顔の筋肉を <strong>①心地よく【緩めて】 ②正しく【鍛える】 ③元の位置へ戻すトレーニング</strong> をお伝えします！
+            </p>
+            <p>
+              一度覚えれば、お家でずっと続けられる「一生モノのセルフメンテ術」です。目指すのは、久しぶりに会ったお友達から「最近なんかした？」「綺麗になったね！」なんて言われちゃうような嬉しい変化。
+            </p>
+            <p>
+              「私の顔でも変わるのかな…」そんな不安も大丈夫です。優しく丁寧に、あなたと二人三脚で「変化」を作っていくセラピスト・サチが、木更津の会場で温かくお待ちしております。
+            </p>
+          </div>
+          
+          {/* 日時・場所のリスト */}
+          <div className="bg-white/80 p-4 rounded-xl space-y-2 text-sm border border-border text-primary">
+            <p className="flex flex-wrap"><span className="font-bold w-16 inline-block">📅 日時</span> <span>2026年5月23日 金曜日 10:00 〜 17:00 (最終受付16:30)</span></p>
+            <p className="flex flex-wrap"><span className="font-bold w-16 inline-block">📍 場所</span> <span>木更津市中央1-4-6 ハマダヤセンタービル2階（ハピくるマルシェ）</span></p>
+          </div>
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-text-light opacity-0 animate-fade-in stagger-4 hidden md:flex">
+        <span className="text-xs tracking-widest uppercase">Scroll</span>
+        <div className="w-px h-6 bg-gradient-to-b from-text-light to-transparent" />
       </div>
     </section>
   );

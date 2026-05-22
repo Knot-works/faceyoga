@@ -40,7 +40,7 @@ export function Header() {
           >
             Face Yoga
             <span className="block text-xs text-text-muted font-body font-light tracking-widest">
-              by Yukie Okita
+              by Okita Sachi
             </span>
           </a>
 

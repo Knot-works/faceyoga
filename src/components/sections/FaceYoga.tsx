@@ -4,8 +4,8 @@ import { Sparkles, Hand, Shield, Heart } from 'lucide-react';
 const features = [
   {
     icon: Hand,
-    title: '道具不要',
-    description: '特別な道具は一切必要ありません。身一つで参加できます。',
+    title: '鏡',
+    description: '最初ポーズを覚え定着するまでは鏡で確認することをおすすめします。',
   },
   {
     icon: Shield,

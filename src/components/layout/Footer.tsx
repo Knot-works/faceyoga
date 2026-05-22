@@ -65,7 +65,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-surface-warm/60">
           <p>
-            &copy; {new Date().getFullYear()} Face Yoga by Yukie Okita. All
+            &copy; {new Date().getFullYear()} Face Yoga by okita sachi. All
             rights reserved.
           </p>
           <p className="text-xs">

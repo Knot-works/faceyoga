@@ -1,31 +1,8 @@
-import { useState } from 'react';
 import { Section, SectionHeader } from '../layout';
 import { Button } from '../ui';
 import { Mail, MessageCircle, Send } from 'lucide-react';
 
 export function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    program: '',
-    message: '',
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Form submission logic would go here
-    console.log('Form submitted:', formData);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
     <Section id="contact" background="white">
       <SectionHeader
@@ -44,28 +21,27 @@ export function Contact() {
               <div className="space-y-4">
                 {/* LINE */}
                 <a
-  href="https://lin.ee/suH9AhB"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="flex items-center gap-4 p-5 bg-[#06C755]/10 rounded-xl hover:bg-[#06C755]/20 transition-colors duration-300 group"
->
-  <div className="w-12 h-12 rounded-xl bg-[#06C755] flex items-center justify-center">
-    <MessageCircle className="w-6 h-6 text-white" />
-  </div>
-  <div>
-    <p className="font-medium text-primary group-hover:text-[#06C755] transition-colors duration-300">
-      LINE公式
-    </p>
-    <p className="text-sm text-text-muted">
-      お気軽にメッセージください
-    </p>
-  </div>
-</a>
-                
+                  href="https://lin.ee/suH9AhB"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-5 bg-[#06C755]/10 rounded-xl hover:bg-[#06C755]/20 transition-colors duration-300 group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-[#06C755] flex items-center justify-center">
+                    <MessageCircle className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-primary group-hover:text-[#06C755] transition-colors duration-300">
+                      LINE公式
+                    </p>
+                    <p className="text-sm text-text-muted">
+                      お気軽にメッセージください
+                    </p>
+                  </div>
+                </a>
 
                 {/* Email */}
                 <a
-                  href="sachi.realignment@gmail.com"
+                  href="mailto:sachi.realignment@gmail.com"
                   className="flex items-center gap-4 p-5 bg-accent/10 rounded-xl hover:bg-accent/20 transition-colors duration-300 group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center">
@@ -94,102 +70,29 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Contact form */}
-          <div className="bg-surface-warm rounded-2xl p-8 md:p-10">
-            <h3 className="font-heading text-xl text-primary mb-6">
+          {/* Contact form (Google Form リンクへの差し替え) */}
+          <div className="bg-surface-warm rounded-2xl p-8 md:p-10 flex flex-col justify-center items-center text-center">
+            <h3 className="font-heading text-xl text-primary mb-4">
               お問い合わせフォーム
             </h3>
+            <p className="text-sm text-text-muted mb-8 leading-relaxed">
+              フォームでのお問い合わせ・お申し込みは、<br />
+              Googleフォームにて受け付けております。<br />
+              下記のボタンよりご入力をお願いいたします。
+            </p>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name */}
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-text-muted mb-2"
-                >
-                  お名前 <span className="text-accent-warm">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-300"
-                  placeholder="山田 花子"
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-text-muted mb-2"
-                >
-                  メールアドレス <span className="text-accent-warm">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-300"
-                  placeholder="example@email.com"
-                />
-              </div>
-
-              {/* Program */}
-              <div>
-                <label
-                  htmlFor="program"
-                  className="block text-sm font-medium text-text-muted mb-2"
-                >
-                  ご興味のあるプログラム
-                </label>
-                <select
-                  id="program"
-                  name="program"
-                  value={formData.program}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-300 appearance-none cursor-pointer"
-                >
-                  <option value="">選択してください</option>
-                  <option value="workshop">スプーン</option>
-                  <option value="5days">お箸</option>
-                  <option value="14days">白鳥</option>
-                  <option value="3months">オキシトシン</option>
-                  <option value="other">その他・相談したい</option>
-                </select>
-              </div>
-
-              {/* Message */}
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-text-muted mb-2"
-                >
-                  メッセージ
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-300 resize-none"
-                  placeholder="ご質問やご要望があればお書きください"
-                />
-              </div>
-
-              {/* Submit */}
-              <Button type="submit" size="lg" className="w-full">
-                <Send className="w-5 h-5 mr-2" />
-                送信する
-              </Button>
-            </form>
+            {/* UIのButtonがaタグ（リンク）として振る舞える想定の記述です。
+                もしエラーになる場合は <a href="..." target="_blank" className="..."> のように通常のaタグに書き換えてください */}
+            {/* 修正前：<Button as="a" ...> 〜 </Button> の部分を以下に置き換えます */}
+<a
+  href="https://forms.gle/7Z5cmafKFC4xiRB38"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-full max-w-sm inline-flex items-center justify-center bg-accent text-white font-medium h-12 px-6 rounded-lg hover:bg-accent/90 transition-colors duration-300 shadow-sm"
+>
+  <Send className="w-5 h-5 mr-2" />
+  フォームを開いて入力する
+</a>
           </div>
         </div>
       </div>

@@ -1,5 +1,7 @@
 import { Section, SectionHeader } from '../layout';
 
+const profileImage = import.meta.env.BASE_URL + 'profile.png';
+
 export function About() {
   return (
     <Section id="about" background="warm">
@@ -12,21 +14,24 @@ export function About() {
             {/* Profile image placeholder */}
             <div className="relative aspect-[4/5] max-w-sm mx-auto lg:mx-0">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-secondary/20 rounded-tl-[80px] rounded-br-[80px] transform -rotate-3" />
-              <div className="absolute inset-0 bg-surface rounded-tl-[70px] rounded-br-[70px] shadow-medium flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-accent/30 flex items-center justify-center">
-                    <span className="text-3xl text-primary font-heading">Y</span>
-                  </div>
-                  <h3 className="font-heading text-xl text-primary mb-2">
+              <div className="absolute inset-0 bg-surface rounded-tl-[70px] rounded-br-[70px] shadow-medium overflow-hidden">
+                <img
+                  src={profileImage}
+                  alt="置田 幸恵"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30" />
+                <div className="relative z-10 flex h-full flex-col items-center justify-end text-center p-8">
+                  <h3 className="font-heading text-xl text-white mb-2">
                     置田 幸恵
                   </h3>
-                  <p className="text-text-muted text-sm leading-relaxed">
+                  <p className="text-white/80 text-sm leading-relaxed">
                     Face Yoga Method
                     <br />
                     国際認定講師
                   </p>
-                  <div className="mt-4 pt-4 border-t border-border">
-                    <p className="text-text-light text-xs">
+                  <div className="mt-4 pt-4 border-t border-white/25">
+                    <p className="text-white/75 text-xs">
                       チェンマイ式
                       <br />
                       タイマッサージセラピスト
